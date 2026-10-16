@@ -1,0 +1,16 @@
+import math
+import sys
+
+
+if len(sys.argv) < 3:
+    print("لطفاً دو عدد b و c را وارد کنید. مثال: python quadratic_solver3.py 2 3")
+    sys.exit(1) 
+
+b = float(sys.argv[1])
+c = float(sys.argv[2])
+
+discriminant = b**2 - 4.0 * c
+d = math.sqrt(discriminant)
+
+print((-b + d) / 2.0)
+print((-b - d) / 2.0)
