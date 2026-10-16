@@ -1,0 +1,13 @@
+import math
+
+b = float(input("Enter b: "))
+c = float(input("Enter c: "))
+
+discriminant = b**2 - 4.0 * c
+
+if discriminant < 0:
+    print("No real solution")
+else:
+    d = math.sqrt(discriminant)
+    print((-b + d) / 2.0)
+    print((-b - d) / 2.0)
