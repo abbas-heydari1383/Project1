@@ -1,0 +1,7 @@
+maximum = a[0]
+
+for v in a[1:]:
+    if v > maximum:
+        maximum = v
+
+print("Maximum =", maximum)
