@@ -1,0 +1,9 @@
+x = float(input("Enter x: "))
+y = float(input("Enter y: "))
+
+s = 0
+
+for n in range(101):
+    s += 1 / ((x + y) ** n)
+
+print("Result =", s)
