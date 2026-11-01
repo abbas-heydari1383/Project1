@@ -1,0 +1,27 @@
+import random
+import math
+
+points = []
+
+for i in range(10):
+    x = random.randint(0, 100)
+    y = random.randint(0, 100)
+    points.append((x, y))
+
+print("Points:", points)
+
+min_distance = float('inf')
+
+for i in range(10):
+    for j in range(i + 1, 10):
+        x1, y1 = points[i]
+        x2, y2 = points[j]
+
+        d = math.sqrt((x2-x1)**2 + (y2-y1)**2)
+
+        if d < min_distance:
+            min_distance = d
+            best_points = (points[i], points[j])
+
+print("Shortest distance:", min_distance)
+print("Closest points:", best_points)
