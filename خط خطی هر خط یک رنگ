@@ -1,0 +1,13 @@
+import turtle as t
+from random import random
+
+colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "cyan", "white", "magenta"]
+
+for i in range(100):
+    steps = int(random() * 100)
+    angle = int(random() * 360)
+    t.pencolor(colors[i % len(colors)])
+    t.right(angle)
+    t.fd(steps)
+
+t.done()
