@@ -1,0 +1,45 @@
+import turtle
+
+t = turtle.Turtle()
+screen = turtle.Screen()
+
+screen.bgcolor("white")
+t.speed(0)
+t.hideturtle()
+
+def midpoint(a, b):
+    return ((a[0] + b[0]) / 2,
+            (a[1] + b[1]) / 2)
+
+def triangle(a, b, c):
+    t.penup()
+    t.goto(a)
+    t.pendown()
+    t.color("black")
+    t.fillcolor("black")
+
+    t.begin_fill()
+    t.goto(b)
+    t.goto(c)
+    t.goto(a)
+    t.end_fill()
+
+def sierpinski(a, b, c, depth):
+    if depth == 0:
+        triangle(a, b, c)
+    else:
+        ab = midpoint(a, b)
+        bc = midpoint(b, c)
+        ca = midpoint(c, a)
+
+        sierpinski(a, ab, ca, depth - 1)
+        sierpinski(ab, b, bc, depth - 1)
+        sierpinski(ca, bc, c, depth - 1)
+
+a = (-250, -200)
+b = (250, -200)
+c = (0, 230)
+
+sierpinski(a, b, c, 5)
+
+turtle.done()
